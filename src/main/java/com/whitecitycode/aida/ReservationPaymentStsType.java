@@ -1,0 +1,48 @@
+
+package com.whitecitycode.aida;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for ReservationPaymentStsType.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ReservationPaymentStsType">
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     &lt;enumeration value="OK"/>
+ *     &lt;enumeration value="PR"/>
+ *   &lt;/restriction>
+ * &lt;/simpleType>
+ * </pre>
+ * 
+ */
+@XmlType(name = "ReservationPaymentStsType")
+@XmlEnum
+public enum ReservationPaymentStsType {
+
+
+    /**
+     * Indicates that the reservation is considered paid.
+     * 
+     */
+    OK,
+
+    /**
+     * Indicates that payment is required for the reservation, which is considered not paid.
+     * 
+     */
+    PR;
+
+    public String value() {
+        return name();
+    }
+
+    public static ReservationPaymentStsType fromValue(String v) {
+        return valueOf(v);
+    }
+
+}
